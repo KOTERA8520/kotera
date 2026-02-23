@@ -22,11 +22,17 @@
         .btn-project { background-color: #27ae60; }
         .icon { margin-right: 10px; font-size: 20px; }
 
-        /* 컨설팅 상품권 등록 아이콘 스타일 */
-        .gift-section { margin-top: 25px; border-top: 1px solid #eee; padding-top: 20px; }
+        /* 컨설팅 상품권 등록 영역 */
+        .gift-section { margin-top: 25px; border-top: 1px solid #eee; padding-top: 20px; margin-bottom: 10px; }
         .gift-link { display: inline-block; transition: transform 0.2s; }
         .gift-link:hover { transform: scale(1.1); }
-        .gift-img { width: 150px; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .gift-img { width: 150px; height: auto; border-radius: 8px; }
+
+        /* 하단 푸터(법인정보) 스타일 */
+        .footer { background-color: #f9fafb; padding: 30px 20px; border-top: 1px solid #eee; color: #7f8c8d; font-size: 12px; line-height: 1.8; text-align: center; }
+        .footer p { margin: 5px 0; word-break: keep-all; }
+        .footer-line { margin: 0 8px; color: #ccc; }
+        .copyright { margin-top: 15px !important; color: #bdc3c7; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -35,11 +41,9 @@
         <a href="https://kotera8520.github.io/kotera" class="img-link">
             <img src="logo.jpg" alt="KOTERA 로고" class="full-img">
         </a>
-        
         <a href="https://kotera8520.github.io/kotera" class="img-link">
             <img src="top_banner.jpg" alt="KOTERA 메인 배너" class="full-img">
         </a>
-        
         <a href="https://kotera8520.github.io/kotera" class="img-link">
             <img src="jsm.jpg" alt="정실미 배너" class="full-img">
         </a>
@@ -50,11 +54,9 @@
             <a href="https://cafe.daum.net/policyfund" class="btn btn-cafe" target="_blank" rel="noopener noreferrer">
                 <span class="icon">🏠</span>정실미 다음카페로 이동
             </a>
-            
             <a href="https://www.youtube.com/@kotera8520" class="btn btn-youtube" target="_blank" rel="noopener noreferrer">
                 <span class="icon">📺</span>공식 유튜브 채널
             </a>
-            
             <a href="https://cafe.daum.net/policyfund/HhFz/796" class="btn btn-project" target="_blank" rel="noopener noreferrer">
                 <span class="icon">📋</span>지원사업 안내 확인
             </a>
@@ -65,6 +67,21 @@
                 </a>
             </div>
         </div>
+
+        <footer class="footer">
+            <p>
+                사단법인 한국기술개발협회 <span class="footer-line">|</span> 서울특별시 송파구 충민로 66 가든파이브라이프 테크노관 T7109호
+            </p>
+            <p>
+                TEL : 02.572.8520 <span class="footer-line">|</span> Fax : 02-572-0364 <span class="footer-line">|</span> 등록번호 : 120-82-11961
+            </p>
+            <p>
+                협회장(대표) : 최노아
+            </p>
+            <p class="copyright">
+                Copyright 2014 Korea Technology R&D Association
+            </p>
+        </footer>
     </div>
 </body>
 </html>

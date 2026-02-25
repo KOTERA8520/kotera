@@ -22,11 +22,19 @@
         .btn-project { background-color: #27ae60; }
         .icon { margin-right: 10px; font-size: 20px; }
 
-        /* 컨설팅 상품권 등록 영역 */
-        .gift-section { margin-top: 25px; border-top: 1px solid #eee; padding-top: 20px; margin-bottom: 10px; }
+        /* 하단 버튼 병렬 배치 영역 */
+        .gift-section { 
+            margin-top: 25px; 
+            border-top: 1px solid #eee; 
+            padding-top: 25px; 
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 15px; /* 버튼 사이 간격 */
+        }
         .gift-link { display: inline-block; transition: transform 0.2s; }
-        .gift-link:hover { transform: scale(1.1); }
-        .gift-img { width: 150px; height: auto; border-radius: 8px; }
+        .gift-link:hover { transform: scale(1.05); }
+        .gift-img { width: 160px; height: auto; border-radius: 8px; }
 
         /* 하단 푸터(법인정보) 스타일 */
         .footer { background-color: #f9fafb; padding: 30px 20px; border-top: 1px solid #eee; color: #7f8c8d; font-size: 12px; line-height: 1.8; text-align: center; }
@@ -64,6 +72,9 @@
             <div class="gift-section">
                 <a href="https://forms.gle/avJuU74KKV9HkQTx8" class="gift-link" target="_blank" rel="noopener noreferrer">
                     <img src="gift.jpg" alt="컨설팅 상품권 등록" class="gift-img">
+                </a>
+                <a href="http://gw.kotera.or.kr" class="gift-link" target="_blank" rel="noopener noreferrer">
+                    <img src="gw.png" alt="그룹웨어 입장" class="gift-img">
                 </a>
             </div>
         </div>

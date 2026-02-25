@@ -17,42 +17,20 @@
         h1 { color: #2c3e50; font-size: 18px; line-height: 1.6; margin-bottom: 30px; word-break: keep-all; }
         .btn { display: flex; align-items: center; justify-content: center; padding: 16px; margin: 12px 0; border: none; border-radius: 12px; color: white; text-decoration: none; font-weight: bold; transition: transform 0.2s; cursor: pointer; font-size: 16px; }
         .btn:hover { transform: scale(1.02); filter: brightness(1.1); }
+        
+        /* 버튼별 색상 설정 */
         .btn-cafe { background-color: #3498db; }
         .btn-youtube { background-color: #e74c3c; }
         .btn-project { background-color: #27ae60; }
+        .btn-gift { background-color: #00b8d4; } /* 상품권 버튼 색상 */
+        .btn-gw { background-color: #4a90e2; }   /* 그룹웨어 버튼 색상 */
+        
         .icon { margin-right: 10px; font-size: 20px; }
 
-        /* 하단 버튼 병렬 배치 영역 (완벽 균형) */
-        .gift-section { 
-            margin-top: 25px; 
-            border-top: 1px solid #eee; 
-            padding-top: 25px; 
-            margin-bottom: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center; /* 세로 중앙 정렬 */
-            gap: 15px; /* 버튼 사이 간격 */
-        }
-        
-        /* 버튼을 감싸는 링크의 크기를 똑같이 배분 */
-        .gift-link { 
-            display: flex; 
-            justify-content: center;
-            flex: 1; /* 남은 공간을 동일하게 나눔 */
-            max-width: 170px; /* 최대 크기 제한으로 균형 유지 */
-            transition: transform 0.2s; 
-        }
-        .gift-link:hover { transform: scale(1.05); }
-        
-        /* 이미지 자체의 크기를 부모에 100% 맞춤 */
-        .gift-img { 
-            width: 100%; 
-            height: auto; 
-            border-radius: 8px; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 살짝 그림자를 주어 깔끔하게 */
-        }
+        /* 하단 구분선 */
+        .divider { margin: 25px 0 10px 0; border-top: 1px solid #eee; padding-top: 10px; }
 
-        /* 하단 푸터(법인정보) 스타일 */
+        /* 하단 푸터 스타일 */
         .footer { background-color: #f9fafb; padding: 30px 20px; border-top: 1px solid #eee; color: #7f8c8d; font-size: 12px; line-height: 1.8; text-align: center; }
         .footer p { margin: 5px 0; word-break: keep-all; }
         .footer-line { margin: 0 8px; color: #ccc; }
@@ -85,14 +63,14 @@
                 <span class="icon">📋</span>2026년도 KOTERA 통합 지원사업
             </a>
 
-            <div class="gift-section">
-                <a href="https://forms.gle/avJuU74KKV9HkQTx8" class="gift-link" target="_blank" rel="noopener noreferrer">
-                    <img src="gift.jpg" alt="컨설팅 상품권 등록" class="gift-img">
-                </a>
-                <a href="http://gw.kotera.or.kr" class="gift-link" target="_blank" rel="noopener noreferrer">
-                    <img src="gw.png" alt="그룹웨어 입장" class="gift-img">
-                </a>
-            </div>
+            <div class="divider"></div>
+            
+            <a href="https://forms.gle/avJuU74KKV9HkQTx8" class="btn btn-gift" target="_blank" rel="noopener noreferrer">
+                <span class="icon">🎫</span>컨설팅 상품권 등록하기
+            </a>
+            <a href="http://gw.kotera.or.kr" class="btn btn-gw" target="_blank" rel="noopener noreferrer">
+                <span class="icon">🏢</span>협회 그룹웨어 입장 (웹메일)
+            </a>
         </div>
 
         <footer class="footer">

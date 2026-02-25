@@ -22,13 +22,27 @@
         .btn-cafe { background-color: #3498db; }
         .btn-youtube { background-color: #e74c3c; }
         .btn-project { background-color: #27ae60; }
-        .btn-gift { background-color: #00b8d4; } /* 상품권 버튼 색상 */
-        .btn-gw { background-color: #4a90e2; }   /* 그룹웨어 버튼 색상 */
         
-        .icon { margin-right: 10px; font-size: 20px; }
+        /* 하단 좌우 배치용 스타일 */
+        .sub-btn-row { 
+            display: flex; 
+            gap: 12px; 
+            margin-top: 15px; 
+            justify-content: center; 
+        }
+        .btn-sub { 
+            flex: 1; /* 좌우 균등 배분 */
+            margin: 0 !important; /* 기존 간격 무시 */
+            padding: 14px 10px !important; /* 좌우 배치용으로 높이 조절 */
+            font-size: 14px !important; /* 좁은 폭에 맞춰 폰트 소폭 조정 */
+        }
+        .btn-gift { background-color: #00b8d4; } 
+        .btn-gw { background-color: #4a90e2; }   
+        
+        .icon { margin-right: 8px; font-size: 18px; }
 
         /* 하단 구분선 */
-        .divider { margin: 25px 0 10px 0; border-top: 1px solid #eee; padding-top: 10px; }
+        .divider { margin: 25px 0 20px 0; border-top: 1px solid #eee; }
 
         /* 하단 푸터 스타일 */
         .footer { background-color: #f9fafb; padding: 30px 20px; border-top: 1px solid #eee; color: #7f8c8d; font-size: 12px; line-height: 1.8; text-align: center; }
@@ -65,12 +79,14 @@
 
             <div class="divider"></div>
             
-            <a href="https://forms.gle/avJuU74KKV9HkQTx8" class="btn btn-gift" target="_blank" rel="noopener noreferrer">
-                <span class="icon">🎫</span>컨설팅 상품권 등록하기
-            </a>
-            <a href="http://gw.kotera.or.kr" class="btn btn-gw" target="_blank" rel="noopener noreferrer">
-                <span class="icon">🏢</span>협회 그룹웨어 입장 (웹메일)
-            </a>
+            <div class="sub-btn-row">
+                <a href="https://forms.gle/avJuU74KKV9HkQTx8" class="btn btn-sub btn-gift" target="_blank" rel="noopener noreferrer">
+                    <span class="icon">🎫</span>상품권 등록
+                </a>
+                <a href="http://gw.kotera.or.kr" class="btn btn-sub btn-gw" target="_blank" rel="noopener noreferrer">
+                    <span class="icon">🏢</span>그룹웨어 입장
+                </a>
+            </div>
         </div>
 
         <footer class="footer">

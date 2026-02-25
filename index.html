@@ -22,7 +22,7 @@
         .btn-project { background-color: #27ae60; }
         .icon { margin-right: 10px; font-size: 20px; }
 
-        /* 하단 버튼 병렬 배치 영역 */
+        /* 하단 버튼 병렬 배치 영역 (완벽 균형) */
         .gift-section { 
             margin-top: 25px; 
             border-top: 1px solid #eee; 
@@ -30,11 +30,27 @@
             margin-bottom: 10px;
             display: flex;
             justify-content: center;
+            align-items: center; /* 세로 중앙 정렬 */
             gap: 15px; /* 버튼 사이 간격 */
         }
-        .gift-link { display: inline-block; transition: transform 0.2s; }
+        
+        /* 버튼을 감싸는 링크의 크기를 똑같이 배분 */
+        .gift-link { 
+            display: flex; 
+            justify-content: center;
+            flex: 1; /* 남은 공간을 동일하게 나눔 */
+            max-width: 170px; /* 최대 크기 제한으로 균형 유지 */
+            transition: transform 0.2s; 
+        }
         .gift-link:hover { transform: scale(1.05); }
-        .gift-img { width: 160px; height: auto; border-radius: 8px; }
+        
+        /* 이미지 자체의 크기를 부모에 100% 맞춤 */
+        .gift-img { 
+            width: 100%; 
+            height: auto; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* 살짝 그림자를 주어 깔끔하게 */
+        }
 
         /* 하단 푸터(법인정보) 스타일 */
         .footer { background-color: #f9fafb; padding: 30px 20px; border-top: 1px solid #eee; color: #7f8c8d; font-size: 12px; line-height: 1.8; text-align: center; }

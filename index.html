@@ -101,55 +101,65 @@
             <p>info@kotera.or.kr  |  협회장(대표) : 최노아</p>
             <p class="copyright">Copyright 2014 Korea Technology R&D Association</p>
         </footer>
+<div id="chat-circle" onclick="toggleChat()" style="position:fixed; bottom:20px; right:20px; width:60px; height:60px; background:#004a95; border-radius:50%; box-shadow:0 4px 15px rgba(0,0,0,0.3); cursor:pointer; display:flex; justify-content:center; align-items:center; z-index:1000;">
+    <span style="color:white; font-size:30px;">💬</span>
+</div>
 
-    <div id="chat-circle" onclick="toggleChat()" style="position:fixed; bottom:20px; right:20px; width:60px; height:60px; background:#004a95; border-radius:50%; box-shadow:0 4px 15px rgba(0,0,0,0.3); cursor:pointer; display:flex; justify-content:center; align-items:center; z-index:1000;">
-        <span style="color:white; font-size:30px;">💬</span>
+<div id="chat-box" style="position:fixed; bottom:90px; right:20px; width:350px; height:500px; background:white; border-radius:15px; box-shadow:0 5px 25px rgba(0,0,0,0.2); display:none; flex-direction:column; overflow:hidden; z-index:1000; border:1px solid #ddd;">
+    <div style="background:#004a95; color:white; padding:15px; font-weight:bold; display:flex; justify-content:between; align-items:center;">
+        <span style="flex:1;">KOTERA AI기업R&D지도사</span>
+        <span onclick="toggleChat()" style="cursor:pointer; font-size:20px;">×</span>
     </div>
-
-    <div id="chat-box" style="position:fixed; bottom:90px; right:20px; width:350px; height:500px; background:white; border-radius:15px; box-shadow:0 5px 25px rgba(0,0,0,0.2); display:none; flex-direction:column; overflow:hidden; z-index:1000; border:1px solid #ddd;">
-        <div style="background:#004a95; color:white; padding:15px; font-weight:bold; display:flex; justify-content:space-between; align-items:center;">
-            <span>KOTERA AI기업R&D지도사</span>
-            <span onclick="toggleChat()" style="cursor:pointer; font-size:20px;">×</span>
-        </div>
-        <div id="chat-window" style="flex:1; overflow-y:auto; padding:15px; font-size:14px; background:#f9f9f9;">
-            <div style="background:white; padding:10px; border-radius:10px; margin-bottom:10px; box-shadow:0 1px 2px rgba(0,0,0,0.05);">
-                안녕하십니까? 사단법인 한국기술개발협회 AI전문위원입니다. 정책자금 및 R&D지도사 과정에 대해 무엇이든 물어보세요.
-            </div>
-        </div>
-        <div style="padding:15px; border-top:1px solid #eee; display:flex; gap:5px; background:white;">
-            <input type="text" id="user-input" style="flex:1; padding:10px; border:1px solid #ddd; border-radius:5px; outline:none;" placeholder="질문을 입력하세요..." onkeypress="if(event.keyCode==13) sendMsg()">
-            <button onclick="sendMsg()" style="padding:10px 15px; background:#004a95; color:white; border:none; border-radius:5px; cursor:pointer;">전송</button>
+    <div id="chat-window" style="flex:1; overflow-y:auto; padding:15px; font-size:14px; background:#f9f9f9;">
+        <div style="background:white; padding:10px; border-radius:10px; margin-bottom:10px; box-shadow:0 1px 2px rgba(0,0,0,0.05);">
+            안녕하십니까? 사단법인 한국기술개발협회의 전문위원단의 AI기업R&D지도사입니다. 무엇이 궁금하신가요?
         </div>
     </div>
+    <div style="padding:15px; border-top:1px solid #eee; display:flex; gap:5px; background:white;">
+        <input type="text" id="user-input" style="flex:1; padding:10px; border:1px solid #ddd; border-radius:5px; outline:none;" placeholder="질문을 입력하세요..." onkeypress="if(event.keyCode==13) sendMsg()">
+        <button onclick="sendMsg()" style="padding:10px 15px; background:#004a95; color:white; border:none; border-radius:5px; cursor:pointer;">전송</button>
+    </div>
+</div>
 
 <script>
-// 1. 창 열고 닫기 함수 (협회장님 코드에서 빠졌던 부분입니다)
+// 창 열고 닫기 함수
 function toggleChat() {
     const chatBox = document.getElementById('chat-box');
     chatBox.style.display = (chatBox.style.display === 'none' || chatBox.style.display === '') ? 'flex' : 'none';
 }
 
-// 2. 메시지 전송 함수
+// 메시지 전송 함수
 async function sendMsg() {
     const input = document.getElementById('user-input');
-    const windowChat = document.getElementById('chat-window');
+    const window = document.getElementById('chat-window');
     const msg = input.value;
     if(!msg) return;
 
     // 내 메시지 표시
-    windowChat.innerHTML += `<div style="text-align:right; margin-bottom:10px;"><span style="background:#004a95; color:white; padding:8px 12px; border-radius:10px; display:inline-block;">${msg}</span></div>`;
+    window.innerHTML += `<div style="text-align:right; margin-bottom:10px;"><span style="background:#004a95; color:white; padding:8px 12px; border-radius:10px; display:inline-block;">${msg}</span></div>`;
     
     // 로딩 표시
     const loadingId = 'loading-' + Date.now();
-    windowChat.innerHTML += `<div id="${loadingId}" style="margin-bottom:10px;"><span style="background:#eee; padding:8px 12px; border-radius:10px; display:inline-block;">전문위원 답변 대기 중...</span></div>`;
+    window.innerHTML += `<div id="${loadingId}" style="margin-bottom:10px;"><span style="background:#eee; padding:8px 12px; border-radius:10px; display:inline-block;">생각 중...</span></div>`;
     input.value = '';
-    windowChat.scrollTop = windowChat.scrollHeight;
+    window.scrollTop = window.scrollHeight;
 
     try {
-        // 캐시 방지를 위해 주소 뒤에 v=final을 붙였습니다.
         const response = await fetch('https://genai-app-rd-1-808470621871.us-central1.run.app/', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({message: msg})
         });
         const data = await response.json();
+        document.getElementById(loadingId).remove();
+        
+        // AI 답변 표시
+        window.innerHTML += `<div style="margin-bottom:10px;"><span style="background:white; padding:8px 12px; border-radius:10px; display:inline-block; border:1px solid #eee; box-shadow:0 1px 2px rgba(0,0,0,0.05);"><b>AI:</b> ${data.answer}</span></div>`;
+    } catch (e) {
+        document.getElementById(loadingId).innerHTML = `<span style="color:red;">연결 오류가 발생했습니다.</span>`;
+    }
+    window.scrollTop = window.scrollHeight;
+}
+</script>
+</body>
+</html>

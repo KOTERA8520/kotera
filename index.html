@@ -4,44 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KOTERA 공식 안내</title>
-    <style>
-        body { font-family: 'Apple SD Gothic Neo', sans-serif; background-color: #f4f7f9; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; margin: 0; padding: 20px 0; }
-        .container { text-align: center; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 95%; max-width: 600px; overflow: hidden; margin-bottom: 50px; }
-        .img-link { display: block; width: 100%; text-decoration: none; font-size: 0; }
-        .full-img { width: 100%; height: auto; display: block; border: none; }
-        .project-banner { margin: 15px 0; border-radius: 12px; transition: transform 0.2s; overflow: hidden; display: block; }
-        .project-banner:hover { transform: scale(1.01); filter: brightness(1.05); }
-        .content-box { padding: 30px 20px; }
-        h1 { color: #2c3e50; font-size: 18px; line-height: 1.6; margin-bottom: 25px; word-break: keep-all; }
-        .btn { display: flex; align-items: center; justify-content: center; padding: 16px; margin: 12px 0; border: none; border-radius: 12px; color: white; text-decoration: none; font-weight: bold; transition: transform 0.2s; cursor: pointer; font-size: 16px; }
-        .btn:hover { transform: scale(1.02); filter: brightness(1.1); }
-        .btn-notice { background-color: #f39c12; margin-bottom: 25px !important; box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3); } 
-        .btn-cafe { background-color: #3498db; }
-        .btn-youtube { background-color: #e74c3c; }
-        .sub-btn-row { display: flex; gap: 12px; margin-top: 15px; justify-content: center; }
-        .btn-sub { flex: 1; margin: 0 !important; padding: 14px 10px !important; font-size: 14px !important; }
-        .btn-gift { background-color: #00b8d4; } 
-        .btn-gw { background-color: #4a90e2; }   
-        .icon { margin-right: 8px; font-size: 18px; }
-        .divider { margin: 25px 0 20px 0; border-top: 1px solid #eee; }
-        .footer { background-color: #f9fafb; padding: 30px 20px; border-top: 1px solid #eee; color: #7f8c8d; font-size: 12px; line-height: 1.8; text-align: center; }
-        .footer p { margin: 5px 0; word-break: keep-all; }
-        .footer-line { margin: 0 8px; color: #ccc; }
-        .copyright { margin-top: 15px !important; color: #bdc3c7; font-weight: bold; }
+   <style>
+    body { font-family: 'Apple SD Gothic Neo', sans-serif; background-color: #f4f7f9; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; margin: 0; padding: 20px 0; }
+    .container { text-align: center; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 95%; max-width: 600px; overflow: hidden; margin-bottom: 50px; }
+    .img-link { display: block; width: 100%; text-decoration: none; font-size: 0; }
+    .full-img { width: 100%; height: auto; display: block; border: none; }
+    .project-banner { margin: 15px 0; border-radius: 12px; transition: transform 0.2s; overflow: hidden; display: block; }
+    .project-banner:hover { transform: scale(1.01); filter: brightness(1.05); }
+    .content-box { padding: 30px 20px; }
+    h1 { color: #2c3e50; font-size: 18px; line-height: 1.6; margin-bottom: 25px; word-break: keep-all; }
+    .btn { display: flex; align-items: center; justify-content: center; padding: 16px; margin: 12px 0; border: none; border-radius: 12px; color: white; text-decoration: none; font-weight: bold; transition: transform 0.2s; cursor: pointer; font-size: 16px; }
+    .btn:hover { transform: scale(1.02); filter: brightness(1.1); }
+    .btn-notice { background-color: #f39c12; margin-bottom: 25px !important; box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3); } 
+    .btn-cafe { background-color: #3498db; }
+    .btn-youtube { background-color: #e74c3c; }
+    .sub-btn-row { display: flex; gap: 12px; margin-top: 15px; justify-content: center; }
+    .btn-sub { flex: 1; margin: 0 !important; padding: 14px 10px !important; font-size: 14px !important; }
+    .btn-gift { background-color: #00b8d4; } 
+    .btn-gw { background-color: #4a90e2; }   
+    .icon { margin-right: 8px; font-size: 18px; }
+    .divider { margin: 25px 0 20px 0; border-top: 1px solid #eee; }
+    .footer { background-color: #f9fafb; padding: 30px 20px; border-top: 1px solid #eee; color: #7f8c8d; font-size: 12px; line-height: 1.8; text-align: center; }
+    .footer p { margin: 5px 0; word-break: keep-all; }
+    .footer-line { margin: 0 8px; color: #ccc; }
+    .copyright { margin-top: 15px !important; color: #bdc3c7; font-weight: bold; }
 
-        /* 챗봇 커스텀 스타일 */
-        df-messenger {
-            z-index: 999;
-            position: fixed;
-            --df-messenger-font-color: #000;
-            --df-messenger-font-family: 'Apple SD Gothic Neo', sans-serif;
-            --df-messenger-chat-background: #f3f6fc;
-            --df-messenger-message-user-background: #d3e3fd;
-            --df-messenger-message-bot-background: #ffffff;
-            bottom: 16px;
-            right: 16px;
-        }
-    </style>
+    /* 챗봇 타이틀 글자 크기 수정 부분 */
+    df-messenger {
+        z-index: 999;
+        position: fixed;
+        --df-messenger-font-color: #000;
+        --df-messenger-font-family: 'Apple SD Gothic Neo', sans-serif;
+        --df-messenger-chat-background: #f3f6fc;
+        --df-messenger-message-user-background: #d3e3fd;
+        --df-messenger-message-bot-background: #ffffff;
+        
+        /* 타이틀 바 높이와 글자 크기 조절 */
+        --df-messenger-header-font-size: 14px; /* 기존보다 작게 조절 */
+        --df-messenger-header-padding: 10px;
+        
+        bottom: 16px;
+        right: 16px;
+    }
+</style>
 </head>
 <body>
     <div class="container">

@@ -1,86 +1,72 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KOTERA 공식 안내</title>
-    <style>
-        /* [중요] 기존 레이아웃 완벽 복구 스타일 */
-        body { font-family: 'Apple SD Gothic Neo', sans-serif; background-color: #f4f7f9; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; margin: 0; padding: 20px 0; }
-        .container { text-align: center; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 95%; max-width: 600px; overflow: hidden; margin-bottom: 50px; }
-        .img-link { display: block; width: 100%; text-decoration: none; font-size: 0; }
-        .full-img { width: 100%; height: auto; display: block; border: none; }
-        .project-banner { margin: 15px 0; border-radius: 12px; transition: transform 0.2s; overflow: hidden; display: block; }
-        .project-banner:hover { transform: scale(1.01); filter: brightness(1.05); }
-        .content-box { padding: 30px 20px; }
-        h1 { color: #2c3e50; font-size: 18px; line-height: 1.6; margin-bottom: 25px; word-break: keep-all; }
-        .btn { display: flex; align-items: center; justify-content: center; padding: 16px; margin: 12px 0; border: none; border-radius: 12px; color: white; text-decoration: none; font-weight: bold; transition: transform 0.2s; cursor: pointer; font-size: 16px; }
-        .btn:hover { transform: scale(1.02); filter: brightness(1.1); }
-        .btn-notice { background-color: #f39c12; margin-bottom: 25px !important; box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3); } 
-        .btn-cafe { background-color: #3498db; }
-        .btn-youtube { background-color: #e74c3c; }
-        .sub-btn-row { display: flex; gap: 12px; margin-top: 15px; justify-content: center; }
-        .btn-sub { flex: 1; margin: 0 !important; padding: 14px 10px !important; font-size: 14px !important; }
-        .btn-gift { background-color: #00b8d4; } 
-        .btn-gw { background-color: #4a90e2; }   
-        .icon { margin-right: 8px; font-size: 18px; }
-        .divider { margin: 25px 0 20px 0; border-top: 1px solid #eee; }
-        .footer { background-color: #f9fafb; padding: 30px 20px; border-top: 1px solid #eee; color: #7f8c8d; font-size: 12px; line-height: 1.8; text-align: center; }
-        .footer p { margin: 5px 0; word-break: keep-all; }
-        .copyright { margin-top: 15px !important; color: #bdc3c7; font-weight: bold; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOTERA 공식 안내</title>
+    <style>
+        /* [필독] 협회장님, 이 부분이 홈페이지를 예쁘게 만드는 '뼈대'입니다 */
+        body { font-family: 'Apple SD Gothic Neo', sans-serif; background-color: #f4f7f9; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; margin: 0; padding: 20px 0; }
+        .container { text-align: center; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); width: 95%; max-width: 600px; overflow: hidden; margin-bottom: 50px; }
+        .img-link { display: block; width: 100%; text-decoration: none; font-size: 0; }
+        .full-img { width: 100%; height: auto; display: block; border: none; }
+        .project-banner { margin: 15px 0; border-radius: 12px; transition: transform 0.2s; overflow: hidden; display: block; }
+        .project-banner:hover { transform: scale(1.01); filter: brightness(1.05); }
+        .content-box { padding: 30px 20px; }
+        h1 { color: #2c3e50; font-size: 18px; line-height: 1.6; margin-bottom: 25px; word-break: keep-all; }
+        .btn { display: flex; align-items: center; justify-content: center; padding: 16px; margin: 12px 0; border: none; border-radius: 12px; color: white; text-decoration: none; font-weight: bold; transition: transform 0.2s; cursor: pointer; font-size: 16px; }
+        .btn:hover { transform: scale(1.02); filter: brightness(1.1); }
+        .btn-notice { background-color: #f39c12; margin-bottom: 25px !important; box-shadow: 0 4px 15px rgba(243, 156, 18, 0.3); } 
+        .btn-cafe { background-color: #3498db; }
+        .btn-youtube { background-color: #e74c3c; }
+        .sub-btn-row { display: flex; gap: 12px; margin-top: 15px; justify-content: center; }
+        .btn-sub { flex: 1; margin: 0 !important; padding: 14px 10px !important; font-size: 14px !important; }
+        .btn-gift { background-color: #00b8d4; } 
+        .btn-gw { background-color: #4a90e2; }   
+        .icon { margin-right: 8px; font-size: 18px; }
+        .divider { margin: 25px 0 20px 0; border-top: 1px solid #eee; }
+        .footer { background-color: #f9fafb; padding: 30px 20px; border-top: 1px solid #eee; color: #7f8c8d; font-size: 12px; line-height: 1.8; text-align: center; }
+        .footer p { margin: 5px 0; word-break: keep-all; }
+        .copyright { margin-top: 15px !important; color: #bdc3c7; font-weight: bold; }
 
-        /* [수정] 챗봇 타이틀 한 줄 유지 전용 스타일 */
-        df-messenger {
-            z-index: 999;
-            position: fixed;
-  0       bottom: 16px;
-  0       right: 16px;
-            --df-messenger-header-font-size: 12px;
-        }
-    </style>
+        /* 챗봇 위치 및 디자인 고정 */
+        df-messenger {
+            z-index: 999;
+            position: fixed;
+            bottom: 16px;
+            right: 16px;
+            --df-messenger-header-font-size: 12px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <a href="https://kotera8520.github.io/kotera" class="img-link"><img src="logo.jpg" class="full-img"></a>
-        <a href="https://kotera8520.github.io/kotera" class="img-link"><img src="men.gif" class="full-img"></a>
-        <a href="https://cafe.daum.net/policyfund" class="img-link"><img src="jsm.jpg" class="full-img"></a>
-        
-        <div class="content-box">
-            <h1>사단법인 한국기술개발협회에 오신 것을 환영합니다.</h1>
-            <a href="https://cafe.daum.net/policyfund/HhFz" class="btn btn-notice" target="_blank"><span class="icon">📢</span>실시간 주요 공지사항 확인</a>
-            <a href="https://cafe.daum.net/policyfund" class="btn btn-cafe" target="_blank"><span class="icon">🏠</span>◈정실미◈ 다음카페 바로가기</a>
-            <a href="https://www.youtube.com/@kotera8520" class="btn btn-youtube" target="_blank"><span class="icon">📺</span>KOTERA TV</a>
-            
-            <a href="https://cafe.daum.net/policyfund/HhFz/796" class="project-banner" target="_blank"><img src="7.png" class="full-img"></a>
-            <a href="https://cafe.daum.net/policyfund/7GAA/968" class="project-banner" target="_blank"><img src="help.gif" class="full-img"></a>
-            <a href="https://cafe.daum.net/policyfund/HhFz/791" class="project-banner" target="_blank"><img src="onestop.gif" class="full-img"></a>
-            <a href="https://cafe.daum.net/policyfund/7GAA/913" class="project-banner" target="_blank"><img src="rnd.jpg" class="full-img"></a>
-            <a href="https://goo.gl/forms/6U4SgcwlXWb836Qr2" class="project-banner" target="_blank"><img src="call.gif" class="full-img"></a>
-            
-            <div class="divider"></div>
-            <div class="sub-btn-row">
-                <a href="https://forms.gle/avJuU74KKV9HkQTx8" class="btn btn-sub btn-gift" target="_blank"><span class="icon">🎫</span>컨설팅 상품권 등록</a>
-                <a href="http://gw.kotera.or.kr" class="btn btn-sub btn-gw" target="_blank"><span class="icon">🏢</span>그룹웨어 입장</a>
-            </div>
-        </div>
+    <div class="container">
+        <a href="https://kotera8520.github.io/kotera" class="img-link"><img src="logo.jpg" class="full-img"></a>
+        <a href="https://kotera8520.github.io/kotera" class="img-link"><img src="men.gif" class="full-img"></a>
+        <a href="https://cafe.daum.net/policyfund" class="img-link"><img src="jsm.jpg" class="full-img"></a>
+        
+        <div class="content-box">
+            <h1>사단법인 한국기술개발협회에 오신 것을 환영합니다.</h1>
+            <a href="https://cafe.daum.net/policyfund/HhFz" class="btn btn-notice" target="_blank"><span class="icon">📢</span>실시간 주요 공지사항 확인</a>
+            <a href="https://cafe.daum.net/policyfund" class="btn btn-cafe" target="_blank"><span class="icon">🏠</span>◈정실미◈ 다음카페 바로가기</a>
+            <a href="https://www.youtube.com/@kotera8520" class="btn btn-youtube" target="_blank"><span class="icon">📺</span>KOTERA TV</a>
+            
+            <a href="https://cafe.daum.net/policyfund/HhFz/796" class="project-banner" target="_blank"><img src="7.png" class="full-img"></a>
+            <a href="https://cafe.daum.net/policyfund/7GAA/968" class="project-banner" target="_blank"><img src="help.gif" class="full-img"></a>
+            <a href="https://cafe.daum.net/policyfund/HhFz/791" class="project-banner" target="_blank"><img src="onestop.gif" class="full-img"></a>
+            <a href="https://cafe.daum.net/policyfund/7GAA/913" class="project-banner" target="_blank"><img src="rnd.jpg" class="full-img"></a>
+            <a href="https://goo.gl/forms/6U4SgcwlXWb836Qr2" class="project-banner" target="_blank"><img src="call.gif" class="full-img"></a>
+            
+            <div class="divider"></div>
+            <div class="sub-btn-row">
+                <a href="https://forms.gle/avJuU74KKV9HkQTx8" class="btn btn-sub btn-gift" target="_blank"><span class="icon">🎫</span>컨설팅 상품권 등록</a>
+                <a href="http://gw.kotera.or.kr" class="btn btn-sub btn-gw" target="_blank"><span class="icon">🏢</span>그룹웨어 입장</a>
+            </div>
+        </div>
 
-        <footer class="footer">
-            <p>사단법인 한국기술개발협회 | 서울특별시 송파구 충민로 66 가든파이브라이프 T7109호</p>
-            <p>TEL : 02-572-8520 | info@kotera.or.kr | 대표 : 최노아</p>
-            <p class="copyright">© KOTERA All Rights Reserved.</p>
-        </footer>
-    </div>
-
-    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
-    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
-    <df-messenger
-      project-id="project-febf465e-4c31-40bd-a85"
-      agent-id="211c723a-0e87-4a71-b2c5-d5881e164f1d"
-      language-code="ko"
-      max-query-length="-1">  <df-messenger-chat-bubble
-        chat-title="KOTERA AI R&D지도사"
-        chat-title-icon="https://github.com/KOTERA8520/kotera/blob/main/logo.jpg?raw=true">
-      </df-messenger-chat-bubble>
-    </df-messenger>
-</body>
-</html>
+        <footer class="footer">
+            <p>사단법인 한국기술개발협회 | 서울특별시 송파구 충민로 66 가든파이브라이프 T7109호</p>
+            <p>TEL : 02-572-8520 | info@kotera.or.kr | 대표 : 최노아</p>
+            <p class="copyright">© KOTERA All Rights Reserved.</p>
+        </footer>
+    </div>
